@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+dependencies {
+    implementation gradleApi()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+publishing {
+    publications {
+        multiLanguagePlugin(MavenPublication) {
+            groupId "wsdydeni.widget.plugin"
+            artifactId "MultiLanguagePlugin"
+            version "1.0.3"
+            from components.kotlin
+        }
+    }
+}
